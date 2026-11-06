@@ -18,6 +18,7 @@ zero.
 • P8.6 (Back Left Red LED)
 • P8.7 (Back Right Red LED)
 
+
 void Chassis_Board_LEDs_Init()
 {
   P8->SEL0 &= ~ 0xE1;
@@ -26,4 +27,43 @@ void Chassis_Board_LEDs_Init()
   P8->OUT &= ~0xE1;
 }
 
-2.)
+
+
+2.) Write a void function named Print_Tenth that takes no arguments. Your function
+must iterate from 10 to 51 using a for-loop. Print a message for every 10th iteration
+(10, 20, 30, 40, 50) that states “Index %d: Every 10th iteration.\n” and then print a
+different message for the iterations that follow after the 10th iteration (11, 21, 31,
+41, 51) that states “Index %d: Following the 10th iteration.\n.”
+
+Use the following starter code for your main program. Save the main program as
+print_tenth.c in your assignment repository.
+
+Make sure that you include the code documentation in your print_tenth.c source file
+and add your name in the author section to get full credit. If you’ve used references
+(e.g. GeeksforGeeks, StackOverflow, etc.), cite them below.
+
+
+#include <stdio.h>
+void Print_Tenth();
+
+int main()
+{
+Print_Tenth();
+return 0;
+}
+
+void Print_Tenth()
+{
+  for(int i=10; i<52; i++)
+  {
+    if ((i%10)==0)
+    {
+      printf("Index %d: Every 10th iteration.\n", i);
+    }
+    if ((i%10)==1)
+    {
+      printf("Index %d: Following the 10th iteration.\n", i);
+    }
+  }
+}
+
